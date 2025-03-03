@@ -1,15 +1,15 @@
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-blue-50 py-20 bg-cover bg-center"
+      className="relative bg-blue-50 py-20 bg-cover bg-center min-h-screen flex items-center"
       style={{ backgroundImage: "url('./img/hero-bg.jpg')" }}
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center  bg-opacity-50 p-10 rounded-lg">
-        <div className="md:w-1/2 text-center md:text-left px-6 py-8">
+      <div className="container mx-auto flex flex-col md:flex-row items-center  bg-opacity-50 p-10 rounded-lg w-full max-w-7xl">
+        <div className="md:w-1/2 w-full text-center md:text-left px-6">
           <span className="text-teal-500 uppercase tracking-wide text-sm font-semibold">
             Eiusmod tempor incididunt
           </span>
-          <h2 className="text-6xl font-bold text-gray-900 mt-2">
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mt-2">
             Take the world's best quality{" "}
             <span className="text-black">Treadment</span>
           </h2>

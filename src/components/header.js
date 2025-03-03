@@ -14,7 +14,7 @@ import {
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeNavItem, setActiveNavItem] = useState("HOME");
+  const [activeNavItem, setActiveNavItem] = useState("");
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
   );
@@ -33,10 +33,6 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const handleNavClick = (navItem) => {
-    setActiveNavItem(navItem);
   };
 
   const isMobile = windowWidth < 1024;
@@ -99,13 +95,12 @@ const Header = () => {
                 {navItems.map((item) => (
                   <li key={item}>
                     <a
-                      href="#"
+                      href={item}
                       className={`font-bold ${
                         activeNavItem === item
                           ? "text-gray-900 border-b-2 border-teal-500 pb-2"
                           : "text-gray-700 hover:text-teal-500"
                       }`}
-                      onClick={() => handleNavClick(item)}
                     >
                       {item}
                     </a>
@@ -168,7 +163,6 @@ const Header = () => {
                           ? "flex items-center text-teal-500 border-l-4 border-teal-500 pl-3 text-lg font-bold"
                           : "block pl-5 text-gray-700 hover:text-teal-500 text-lg font-medium"
                       }
-                      onClick={() => handleNavClick(item)}
                     >
                       {activeNavItem === item ? (
                         <span className="border-l-4 border-teal-500 pl-2">
